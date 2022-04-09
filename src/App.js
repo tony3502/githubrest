@@ -1,0 +1,67 @@
+import { useEffect, useState } from "react";
+import "./App.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import './cssCode/AppCss.css'
+import Item from"./component/Item"
+
+
+function App() {
+  const [avatarURL, setAvatarURL] = useState();
+  const [githubUsername, setGitHubusername] = useState();
+  const [repoData, setRepoData] = useState();
+
+  async function repoDataURL() {
+    await fetch("https://api.github.com/users/tony3502/repos")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          const list = result.map((item) => {
+            return (
+              <Item project={item}/>
+            );
+          });
+          setRepoData(list);
+          console.log(repoData);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }
+  useEffect(() => {
+    fetch("https://api.github.com/users/tony3502")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          setAvatarURL(result.avatar_url);
+          setGitHubusername(result.login);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }, []);
+
+  return (
+    <div className="App">
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="top" src={avatarURL} />
+        <Card.Body>
+          <Card.Title>{githubUsername}</Card.Title>
+          <Card.Text>
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </Card.Text>
+          <Button variant="primary" onClick={repoDataURL}>
+            List my public repos
+          </Button>
+        </Card.Body>
+      </Card>
+      {repoData}
+    </div>
+  );
+}
+
+export default App;

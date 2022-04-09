@@ -1,0 +1,125 @@
+*
+{
+    background-color: rgb(39, 39, 39);
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppons',sans-serif;
+    color:aliceblue;
+    text-align: center;
+
+}
+.App
+{
+    display: flex;
+    width: 100;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.BsBook
+{
+    flex-basis: 20%;
+    background-color: #2e3644;
+}
+
+a
+{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    padding: 10px 30px;
+    width: 270px;
+    background: #2e3644;
+
+    border: 5px solid rgb(39, 39, 39);
+
+    color:rgb(255, 255, 255,0.4);
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    transition: 0.5s;
+}
+a:hover
+{
+    color: aliceblue;
+}
+
+a span
+{
+    display: block;
+    position: absolute;
+    background: rgb(231, 137, 240);
+    
+}
+a span:nth-child(1)
+{
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+a:hover span:nth-child(1)
+{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+a span:nth-child(2)
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+a:hover span:nth-child(2)
+{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+a span:nth-child(3)
+{
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+a:hover span:nth-child(3)
+{
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+a span:nth-child(4)
+{
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+a:hover span:nth-child(4)
+{
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
