@@ -51,8 +51,7 @@ function App() {
         <Card.Body>
           <Card.Title>{githubUsername}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            你好，我是tony，歡迎來到我的介紹卡，點擊按鈕查看我的repos。
           </Card.Text>
           <Button variant="primary" onClick={repoDataURL}>
             List my public repos
